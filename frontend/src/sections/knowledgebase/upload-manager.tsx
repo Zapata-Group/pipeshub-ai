@@ -59,8 +59,8 @@ const FolderInput = React.forwardRef<HTMLInputElement, FolderInputProps>((props,
   <input {...props} ref={ref} />
 ));
 
-// Maximum file size: 30MB in bytes
-const MAX_FILE_SIZE = 30 * 1024 * 1024;
+// Maximum file size: 100MB in bytes
+const MAX_FILE_SIZE = 100 * 1024 * 1024;
 
 export default function UploadManager({
   open,
@@ -198,7 +198,7 @@ export default function UploadManager({
     if (fileStats.oversized > 0) {
       setUploadError({
         show: true,
-        message: `Cannot upload: ${fileStats.oversized} file(s) exceed the 30MB limit. Please remove them to continue.`,
+        message: `Cannot upload: ${fileStats.oversized} file(s) exceed the 100MB limit. Please remove them to continue.`,
       });
       return;
     }
@@ -358,7 +358,7 @@ export default function UploadManager({
           }}
         >
           {formatFileSize(processedFile.file.size)}
-          {processedFile.isOversized && ' • Exceeds 30MB limit'}
+          {processedFile.isOversized && ' • Exceeds 100MB limit'}
         </Typography>
       </Box>
 
@@ -687,7 +687,7 @@ export default function UploadManager({
             >
               {files.length > 0
                 ? `${files.length} ${files.length === 1 ? 'file' : 'files'} selected • Add more or remove to adjust`
-                : 'Select files or folders to upload • Max 30MB per file'}
+                : 'Select files or folders to upload • Max 100MB per file'}
             </Typography>
           </Box>
           <IconButton

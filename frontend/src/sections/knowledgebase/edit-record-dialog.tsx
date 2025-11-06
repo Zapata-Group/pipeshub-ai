@@ -37,8 +37,8 @@ import {
 import axios from 'src/utils/axios';
 
 import type { Record } from './types/record-details';
-// Define a constant for maximum file size (30MB)
-const MAX_FILE_SIZE = 30 * 1024 * 1024; // 30MB in bytes
+// Define a constant for maximum file size (100MB)
+const MAX_FILE_SIZE = 100 * 1024 * 1024; // 100MB in bytes
 
 interface SingleFileUploadDialogProps {
   open: boolean;
@@ -53,7 +53,7 @@ interface SingleFileUploadDialogProps {
 const SingleFileUploadDialog: React.FC<SingleFileUploadDialogProps> = ({
   open,
   onClose,
-  maxFileSize = MAX_FILE_SIZE, // Default to 30MB if not specified
+  maxFileSize = MAX_FILE_SIZE, // Default to 100MB if not specified
   onRecordUpdated,
   storageDocumentId,
   recordId,
@@ -570,7 +570,7 @@ const SingleFileUploadDialog: React.FC<SingleFileUploadDialogProps> = ({
                   {existingFile && currentExtension
                     ? `Only .${currentExtension} files are accepted`
                     : 'All file types are accepted'}{' '}
-                  • Maximum size: 30MB
+                  • Maximum size: 100MB
                 </Typography>
               </Box>
             </div>
