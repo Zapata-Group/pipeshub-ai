@@ -248,7 +248,7 @@ export function createKnowledgeBaseRouter(container: Container): Router {
       maxFilesAllowed: 1000, // Allow more files for folder uploads
       isMultipleFilesAllowed: true,
       processingType: FileProcessingType.BUFFER,
-      maxFileSize: 1024 * 1024 * 30, // 30MB per file
+      maxFileSize: 1024 * 1024 * 100, // 100MB per file
       strictFileUpload: true,
     }).getMiddleware,
 
@@ -271,7 +271,7 @@ export function createKnowledgeBaseRouter(container: Container): Router {
       maxFilesAllowed: 1000, // Allow more files for folder uploads
       isMultipleFilesAllowed: true,
       processingType: FileProcessingType.BUFFER,
-      maxFileSize: 1024 * 1024 * 30, // 30MB per file
+      maxFileSize: 1024 * 1024 * 100, // 100MB per file
       strictFileUpload: true,
     }).getMiddleware,
 
